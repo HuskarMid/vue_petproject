@@ -8,7 +8,8 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "clean": "rm -rf .nuxt .output dist"
+    "clean": "rm -rf .nuxt .output dist",
+    "deploy": "npm run clean && npm run generate"
   },
   "dependencies": {
     "@pinia/nuxt": "^0.11.0",

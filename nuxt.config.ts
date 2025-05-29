@@ -62,6 +62,14 @@ export default defineNuxtConfig({
     }
   },
   experimental: {
-    payloadExtraction: false
+    payloadExtraction: false,
+    renderJsonPayloads: false
+  },
+  hooks: {
+    'pages:extend'(pages) {
+      pages.forEach(page => {
+        page.route = `/vue-petproject${page.route}`
+      })
+    }
   }
 })
