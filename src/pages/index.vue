@@ -3,7 +3,9 @@ import { onMounted } from 'vue'
 
 onMounted(() => {
   const currentOrigin = window.location.origin
-  window.location.href = `${currentOrigin}/vue-petproject/vue_petproject/`
+  const isGithubPages = currentOrigin.includes('github.io')
+  const basePath = isGithubPages ? '/vue_petproject/' : '/vue-petproject/vue_petproject/'
+  window.location.href = `${currentOrigin}${basePath}`
 })
 </script>
 
