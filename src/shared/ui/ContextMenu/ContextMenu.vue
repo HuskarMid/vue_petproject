@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useUIStore } from '/src/shared/model/store/ui'
+import { useUIStore } from './src/shared/model/store/ui'
 const uiStore = useUIStore()
 const shareContext = computed(() => uiStore.getShareContext)
 const choosedCount = computed(() => uiStore.getChoosedCount)

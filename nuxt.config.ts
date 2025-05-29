@@ -9,7 +9,7 @@ export default defineNuxtConfig({
     '@pinia/nuxt'
   ],
   alias: {
-    '@': '/src',
-    '@shared': '/shared'
+    '@': './src',
+    '@shared': './shared'
   },
 })
