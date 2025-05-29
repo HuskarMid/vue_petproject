@@ -66,6 +66,12 @@ export default defineNuxtConfig({
     renderJsonPayloads: false,
     asyncContext: false
   },
+  image: {
+    domains: ['images.unsplash.com'],
+    alias: {
+      unsplash: 'https://images.unsplash.com'
+    }
+  },
   hooks: {
     'pages:extend'(pages) {
       pages.forEach(page => {

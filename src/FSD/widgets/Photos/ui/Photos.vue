@@ -6,7 +6,6 @@ import choosed from './choosed.svg'
 const uiStore = useUIStore()
 const isClient = ref(false)
 
-
 onMounted(() => {
     isClient.value = !isClient.value
 })
@@ -50,8 +49,7 @@ const preventContextMenu = (event, id) => {
             <div v-show="photo.isChoosed" class="photos__item-choosed">
                 <img :src="choosed" alt="choosed">
             </div>
-            <img :src="photo.image" alt="photo">
-            
+            <img :src="photo.image" :alt="`photo-${photo.id}`" loading="lazy">
         </div>
     </div>
     <div v-else class="photos__container">
@@ -67,7 +65,6 @@ const preventContextMenu = (event, id) => {
         padding: 0px 20px 20px 20px;
         columns: 6;
         column-gap: 0px;
-
         margin-top: 20px;
     }
     .photos__item {
@@ -77,28 +74,15 @@ const preventContextMenu = (event, id) => {
         margin-bottom: 20px;
         break-inside: avoid;
         position: relative;
-
         box-sizing: border-box;
-
-        @media (max-width: 1650px) {
-            width: 230px;
-        }
-        @media (max-width: 1500px) {
-            width: 200px;
-        }
-        @media (max-width: 1500px) {
-            width: 170px;
-        }
-
     }
     .photos__item:hover {
         transform: scale(1.01);
         transition: transform 0.3s ease;
         cursor: pointer;
-
-        &:hover {
-            border: 2px solid var(--text-color);
-        }
+    }
+    .photos__item:hover {
+        border: 2px solid var(--text-color);
     }
     .photos__item img {
         width: 100%;
@@ -111,7 +95,6 @@ const preventContextMenu = (event, id) => {
         left: 0;
         width: 100%;
         height: 100%;
-
         background-color: rgba(0, 0, 0, 0.5);
         border: 2px solid var(--text-color);
     }
@@ -123,5 +106,20 @@ const preventContextMenu = (event, id) => {
         left: calc(50% - 50px);
         filter: invert(1);
         object-fit: cover;
+    }
+    @media (max-width: 1650px) {
+        .photos__item {
+            width: 230px;
+        }
+    }
+    @media (max-width: 1500px) {
+        .photos__item {
+            width: 200px;
+        }
+    }
+    @media (max-width: 1500px) {
+        .photos__item {
+            width: 170px;
+        }
     }
 </style>
