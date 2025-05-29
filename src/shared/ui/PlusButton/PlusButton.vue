@@ -1,5 +1,5 @@
 <script setup>
-import { useUIStore } from '@/shared/model/store/ui'
+import { useUIStore } from '/src/shared/model/store/ui'
 import { useRouter } from 'vue-router'
 
 const uiStore = useUIStore()

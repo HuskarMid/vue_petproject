@@ -1,4 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+
 export default defineNuxtConfig({
   app: {
     baseURL: '/vue-petproject/'
@@ -8,6 +9,7 @@ export default defineNuxtConfig({
     '@pinia/nuxt'
   ],
   alias: {
-    '@': '/src'
-  }
+    '@': '/src',
+    '@shared': '/shared'
+  },
 })

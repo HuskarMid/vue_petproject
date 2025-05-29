@@ -1,5 +1,5 @@
 <script setup>
-import { useUIStore } from '@/shared/model/store/ui'
+import { useUIStore } from '/src/shared/model/store/ui'
 import { ref, onMounted, computed } from 'vue'
 import choosed from './choosed.svg'
 
