@@ -8,7 +8,8 @@ export default defineNuxtConfig({
       link: [
         { rel: 'icon', type: 'image/x-icon', href: '/vue-petproject/favicon.ico' }
       ]
-    }
+    },
+    buildAssetsDir: '/vue-petproject/_nuxt/'
   },
   devtools: { enabled: true },
   modules: [
@@ -59,5 +60,8 @@ export default defineNuxtConfig({
     routeRules: {
       '/**': { static: true }
     }
+  },
+  experimental: {
+    payloadExtraction: false
   }
 })
