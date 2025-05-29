@@ -1,7 +1,7 @@
 <script setup>
-import Photos from '@/widgets/Photos/ui/Photos.vue'
-import ToggleButton from '@/shared/ui/toggleButton/ToggleButton.vue'
-import PlusButton from '@/shared/ui/PlusButton/PlusButton.vue'
+import Photos from '@widgets/Photos/ui/Photos.vue'
+import ToggleButton from '@shared/ui/ToggleButton/ToggleButton.vue'
+import PlusButton from '@shared/ui/PlusButton/PlusButton.vue'
 </script>
 <template>
     <div class="main-page">

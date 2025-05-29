@@ -1,36 +1,28 @@
 <script setup>
-import { useUIStore } from '@/shared/model/store/ui'
+import { useUIStore } from '@/FSD/shared/model/store/ui'
 import { useRouter } from 'vue-router'
-import { computed, ref, onMounted } from 'vue'
 
 const uiStore = useUIStore()
 const router = useRouter()
-const isMounted = ref(false)
 
-onMounted(() => {
-    isMounted.value = true
-})
-
-const toggleShareContext = () => {
-    uiStore.toggleShareContext()
+const toggleTheme = () => {
+    uiStore.toggleTheme()
 }
 
 const click = () => {
     router.push('/create')
 }
-
-const choosedCount = computed(() => isMounted.value ? uiStore.getChoosedCount : 0)
 </script>
 
 <template>
-    <button @click="toggleShareContext()" class="share-Button">{{ choosedCount }}</button>
+    <button @click="click()" class="plus-Button">+</button>
 </template>
 
 <style>
-    .share-Button {
+    .plus-Button {
         position: fixed;
         top: 20px;
-        right: 185px;
+        right: 135px;
         width: 33px;
         height: 33px;
         font-size: 16px;
@@ -40,11 +32,12 @@ const choosedCount = computed(() => isMounted.value ? uiStore.getChoosedCount : 
         background: var(--bg-color);
         color: var(--text-color);
         cursor: pointer;
-    }
 
-    .share-Button:hover {
+
+    &:hover {
         transition: all 0.15s ease;
         background: var(--text-color);
         color: var(--bg-color);
     }
+}
 </style>

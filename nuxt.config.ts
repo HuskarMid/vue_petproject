@@ -9,6 +9,10 @@ export default defineNuxtConfig({
   modules: [
     '@pinia/nuxt'
   ],
+  dir: {
+    pages: 'src/pages',
+    layouts: 'src/layouts'
+  },
   alias: {
     '@': '/src',
     '@shared': '/src/shared',
@@ -25,17 +29,20 @@ export default defineNuxtConfig({
     resolve: {
       alias: {
         '@': '/src',
-        '@shared': '/src/shared',
-        '@pages': '/src/pages',
-        '@widgets': '/src/widgets',
-        '@features': '/src/features',
-        '@entities': '/src/entities',
-        '@app': '/src/app'
+        '@shared': '/src/FSD/shared',
+        '@pages': '/src/FSD/pages',
+        '@widgets': '/src/FSD/widgets',
+        '@features': '/src/FSD/features',
+        '@entities': '/src/FSD/entities',
+        '@app': '/src/FSD/app'
       }
     }
   },
   typescript: {
     strict: false,
     typeCheck: false
+  },
+  build: {
+    transpile: ['pinia']
   }
 })
