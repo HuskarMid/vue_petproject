@@ -50,8 +50,10 @@ export default defineNuxtConfig({
   build: {
     transpile: ['pinia']
   },
-  generate: {
-    fallback: true
+  ssr: false,
+  target: 'static',
+  router: {
+    base: '/vue-petproject/'
   },
   nitro: {
     prerender: {
