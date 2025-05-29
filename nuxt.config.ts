@@ -17,4 +17,17 @@ export default defineNuxtConfig({
     '@entities': '/src/entities',
     '@app': '/src/app'
   },
+  vite: {
+    resolve: {
+      alias: {
+        '@': '/src',
+        '@shared': '/src/shared',
+        '@pages': '/src/pages',
+        '@widgets': '/src/widgets',
+        '@features': '/src/features',
+        '@entities': '/src/entities',
+        '@app': '/src/app'
+      }
+    }
+  }
 })
