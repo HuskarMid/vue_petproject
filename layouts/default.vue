@@ -5,6 +5,8 @@ import MainPage from '@/pages/MainPage/ui/MainPage.vue'
 import ToggleButton from '@/shared/ui/toggleButton/ToggleButton.vue'
 import PlusButton from '@/shared/ui/PlusButton/PlusButton.vue'
 import Input from '@/shared/ui/Input/Input.vue'
+import ShareButton from '@/shared/ui/ShareButton/ShareButton.vue'
+import ContextMenu from '@/shared/ui/ContextMenu/ContextMenu.vue'
 
 import { loadState, saveState, isLocalStorageAvailable, isPhotoInLocalStorage } from '@/shared/model/store/ui'
 
@@ -24,9 +26,11 @@ const toggleTheme = () => {
 <template>
   <div :class="theme">
     <div class="main-page__navbar">
+        <ContextMenu/>
         <Input />
         <ToggleButton />
         <PlusButton />
+        <ShareButton />
     </div>
     <slot />
   </div>
