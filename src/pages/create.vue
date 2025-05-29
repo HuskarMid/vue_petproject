@@ -1,5 +1,5 @@
 <script setup>
-import CreatePage from '@/pages/CreatePage/ui/CreatePage.vue'
+import CreatePage from '@pages/CreatePage/ui/CreatePage.vue'
 </script>
 
 <template>
