@@ -78,5 +78,8 @@ export default defineNuxtConfig({
         page.route = `/vue-petproject${page.route}`
       })
     }
+  },
+  generate: {
+    fallback: true
   }
 })
