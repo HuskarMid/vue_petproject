@@ -3,7 +3,12 @@ import tsconfigPaths from 'vite-tsconfig-paths'
 
 export default defineNuxtConfig({
   app: {
-    baseURL: '/vue-petproject/'
+    baseURL: '/vue-petproject/',
+    head: {
+      link: [
+        { rel: 'icon', type: 'image/x-icon', href: '/vue-petproject/favicon.ico' }
+      ]
+    }
   },
   devtools: { enabled: true },
   modules: [
@@ -15,12 +20,12 @@ export default defineNuxtConfig({
   },
   alias: {
     '@': '/src',
-    '@shared': '/src/shared',
-    '@pages': '/src/pages',
-    '@widgets': '/src/widgets',
-    '@features': '/src/features',
-    '@entities': '/src/entities',
-    '@app': '/src/app'
+    '@shared': '/src/FSD/shared',
+    '@pages': '/src/FSD/pages',
+    '@widgets': '/src/FSD/widgets',
+    '@features': '/src/FSD/features',
+    '@entities': '/src/FSD/entities',
+    '@app': '/src/FSD/app'
   },
   vite: {
     plugins: [
@@ -44,5 +49,14 @@ export default defineNuxtConfig({
   },
   build: {
     transpile: ['pinia']
+  },
+  generate: {
+    fallback: true
+  },
+  nitro: {
+    prerender: {
+      crawlLinks: true,
+      routes: ['/']
+    }
   }
 })
