@@ -10,6 +10,11 @@ export default defineNuxtConfig({
   ],
   alias: {
     '@': '/src',
-    '@shared': '/src/shared'
+    '@shared': '/src/shared',
+    '@pages': '/src/pages',
+    '@widgets': '/src/widgets',
+    '@features': '/src/features',
+    '@entities': '/src/entities',
+    '@app': '/src/app'
   },
 })

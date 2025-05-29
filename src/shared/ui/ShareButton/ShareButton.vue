@@ -1,5 +1,5 @@
 <script setup>
-import { useUIStore } from '@/shared/model/store/ui'
+import { useUIStore } from '@shared/model/store/ui'
 import { useRouter } from 'vue-router'
 import { computed, ref, onMounted } from 'vue'
 
