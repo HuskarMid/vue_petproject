@@ -1,14 +1,14 @@
 <script setup>
 import { computed } from 'vue'
-import { useUIStore } from '@shared/model/store/ui'
-import MainPage from '@pages/MainPage/ui/MainPage.vue'
-import ToggleButton from '@shared/ui/toggleButton/ToggleButton.vue'
-import PlusButton from '@shared/ui/PlusButton/PlusButton.vue'
-import Input from '@shared/ui/Input/Input.vue'
-import ShareButton from '@shared/ui/ShareButton/ShareButton.vue'
-import ContextMenu from '@shared/ui/ContextMenu/ContextMenu.vue'
+import { useUIStore } from '@/shared/model/store/ui'
+import MainPage from '@/pages/MainPage/ui/MainPage.vue'
+import ToggleButton from '@/shared/ui/ToggleButton/ToggleButton.vue'
+import PlusButton from '@/shared/ui/PlusButton/PlusButton.vue'
+import Input from '@/shared/ui/Input/Input.vue'
+import ShareButton from '@/shared/ui/ShareButton/ShareButton.vue'
+import ContextMenu from '@/shared/ui/ContextMenu/ContextMenu.vue'
 
-import { loadState, saveState, isLocalStorageAvailable, isPhotoInLocalStorage } from '@shared/model/store/ui'
+import { loadState, saveState, isLocalStorageAvailable, isPhotoInLocalStorage } from '@/shared/model/store/ui'
 
 const uiStore = useUIStore()
 const theme = computed(() => `theme-${uiStore.getTheme}`)

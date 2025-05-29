@@ -33,5 +33,9 @@ export default defineNuxtConfig({
         '@app': '/src/app'
       }
     }
+  },
+  typescript: {
+    strict: false,
+    typeCheck: false
   }
 })
