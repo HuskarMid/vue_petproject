@@ -1,25 +1,23 @@
 <script setup>
-import { computed } from 'vue'
-import { useUIStore } from '@/FSD/shared/model/store/ui'
-import MainPage from '@pages/MainPage/ui/MainPage.vue'
-import ToggleButton from '@shared/ui/ToggleButton/ToggleButton.vue'
-import PlusButton from '@shared/ui/PlusButton/PlusButton.vue'
-import Input from '@shared/ui/Input/Input.vue'
+import { onMounted } from 'vue'
 
-const uiStore = useUIStore()
-const theme = computed(() => `theme-${uiStore.getTheme}`)
-
-const toggleTheme = () => {
-  uiStore.toggleTheme()
-}
+onMounted(() => {
+  const currentOrigin = window.location.origin
+  window.location.href = `${currentOrigin}/vue-petproject/vue_petproject/`
+})
 </script>
 
 <template>
-    <NuxtLayout>
-        <MainPage />
-    </NuxtLayout>
+  <div>
+    <p>Перенаправление...</p>
+  </div>
 </template>
 
-<style>
-
-</style>
+<style scoped>
+div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+</style> 
