@@ -9,7 +9,7 @@
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "clean": "rm -rf .nuxt .output dist",
-    "deploy": "npm run clean && npm run generate"
+    "deploy": "npm run clean && NITRO_PRESET=static npm run generate"
   },
   "dependencies": {
     "@pinia/nuxt": "^0.11.0",

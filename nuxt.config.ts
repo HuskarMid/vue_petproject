@@ -63,7 +63,8 @@ export default defineNuxtConfig({
   },
   experimental: {
     payloadExtraction: false,
-    renderJsonPayloads: false
+    renderJsonPayloads: false,
+    asyncContext: false
   },
   hooks: {
     'pages:extend'(pages) {
