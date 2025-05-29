@@ -51,14 +51,13 @@ export default defineNuxtConfig({
     transpile: ['pinia']
   },
   ssr: false,
-  target: 'static',
-  router: {
-    base: '/vue-petproject/'
-  },
   nitro: {
     prerender: {
       crawlLinks: true,
       routes: ['/']
+    },
+    routeRules: {
+      '/**': { static: true }
     }
   }
 })
