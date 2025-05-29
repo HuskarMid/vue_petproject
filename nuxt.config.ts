@@ -1,4 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import tsconfigPaths from 'vite-tsconfig-paths'
 
 export default defineNuxtConfig({
   app: {
@@ -18,6 +19,9 @@ export default defineNuxtConfig({
     '@app': '/src/app'
   },
   vite: {
+    plugins: [
+      tsconfigPaths()
+    ],
     resolve: {
       alias: {
         '@': '/src',
