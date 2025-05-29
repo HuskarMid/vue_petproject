@@ -7,12 +7,11 @@ const uiStore = useUIStore()
 const isClient = ref(false)
 
 onMounted(() => {
-    isClient.value = !isClient.value
+    isClient.value = true
 })
 
 const setPhotoChoosed = (id) => {
     uiStore.setPhotoChoosed(id)
-    console.log('click')
 }
 
 const getDeterministicHeight = (id) => {
@@ -40,20 +39,24 @@ const preventContextMenu = (event, id) => {
 </script>
 
 <template>
-    <div v-if="isClient" class="photos__container">
-        <div class="photos__item" v-for="photo in photos" 
-            :key="photo.id" :style="getItemStyle(photo.height)" 
-            @click="setPhotoChoosed(photo.id)" 
-            @contextmenu="(event) => preventContextMenu(event, photo.id)" 
-            :class="{  }">
-            <div v-show="photo.isChoosed" class="photos__item-choosed">
-                <img :src="choosed" alt="choosed">
+    <div class="photos__container">
+        <div v-if="isClient">
+            <div class="photos__item" v-for="photo in photos" 
+                :key="photo.id" :style="getItemStyle(photo.height)" 
+                @click="setPhotoChoosed(photo.id)" 
+                @contextmenu="(event) => preventContextMenu(event, photo.id)">
+                <div v-show="photo.isChoosed" class="photos__item-choosed">
+                    <img :src="choosed" alt="choosed">
+                </div>
+                <img :src="photo.image" :alt="`photo-${photo.id}`" loading="lazy">
             </div>
-            <img :src="photo.image" :alt="`photo-${photo.id}`" loading="lazy">
         </div>
-    </div>
-    <div v-else class="photos__container">
-        <!-- Placeholder for SSR -->
+        <div v-else>
+            <div class="photos__item" v-for="photo in photos" 
+                :key="photo.id" :style="getItemStyle(photo.height)">
+                <img :src="photo.image" :alt="`photo-${photo.id}`" loading="lazy">
+            </div>
+        </div>
     </div>
 </template>
 

@@ -81,5 +81,8 @@ export default defineNuxtConfig({
   },
   generate: {
     fallback: true
+  },
+  router: {
+    base: '/vue-petproject/'
   }
 })
